@@ -12,3 +12,18 @@ def get_user_profile(username: str):
         return None
     
     return response.json()
+
+def get_user_repositories(username: str):
+    url = f"{GITHUB_API_URL}/{username}/repos"
+
+    params = {
+        "per_page": 100,
+        "sort": "updated"
+    }
+
+    response = requests.get(url, params=params)
+
+    if response.status_code != 200:
+        return None
+
+    return response.json()
