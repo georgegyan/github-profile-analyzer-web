@@ -6,12 +6,12 @@ from app.services.github_services import (
     get_user_repositories
 )
 from app.services.score_service import calculate_score
+from app.services.github_client import GitHubAPIError
 
 router = APIRouter(
     prefix="/api/users",
     tags=["Developer Score"]
 )
-
 
 @router.get(
     "/{username}/score",
@@ -19,13 +19,14 @@ router = APIRouter(
 )
 def get_developer_score(username: str):
 
-    user = get_user_profile(username)
-    repositories = get_user_repositories(username)
+    try:
+        user = get_user_profile(username)
+        repositories = get_user_repositories(username)
 
-    if user is None or repositories is None:
+    except GitHubAPIError as error:
         raise HTTPException(
             status_code=404,
-            detail="GitHub user not found"
+            detail=str(error)
         )
 
     recent_repositories = repositories[:5]
