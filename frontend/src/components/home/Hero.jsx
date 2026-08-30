@@ -25,34 +25,34 @@ export default function Hero() {
   const cells = useContributionTexture()
 
   return (
-    <section className="relative overflow-hidden border-b border-[var(--color-border)]">
+    <section className="relative overflow-hidden border-b border-border">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 flex justify-center opacity-[0.55] [mask-image:linear-gradient(to_bottom,black,transparent_85%)] dark:opacity-40"
+        className="pointer-events-none absolute inset-x-0 top-0 flex justify-center opacity-[0.55] mask-[linear-gradient(to_bottom,black,transparent_85%)] dark:opacity-40"
       >
         <div
-          className="grid gap-[3px] pt-10"
+          className="grid gap-0.75 pt-10"
           style={{ gridTemplateColumns: `repeat(${COLS}, minmax(0, 1fr))` }}
         >
           {cells.map((level, i) => (
             <span
               key={i}
-              className={`h-2.5 w-2.5 rounded-[2px] ${LEVELS[level]}`}
+              className={`h-2.5 w-2.5 rounded-xs ${LEVELS[level]}`}
             />
           ))}
         </div>
       </div>
 
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 text-center">
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border-strong)] bg-[var(--color-surface)] px-3 py-1 text-xs font-mono text-[var(--color-text-muted)] animate-fade-up">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-green)]" />
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-border-strong bg-surface px-3 py-1 text-xs font-mono text-text-muted animate-fade-up">
+          <span className="h-1.5 w-1.5 rounded-full bg-green" />
           live · public GitHub data
         </span>
 
-        <h1 className="mt-5 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-[var(--color-text)] animate-fade-up [animation-delay:60ms]">
+        <h1 className="mt-5 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-text animate-fade-up [animation-delay:60ms]">
           Understand Your GitHub Profile.
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-base sm:text-lg text-[var(--color-text-muted)] animate-fade-up [animation-delay:120ms]">
+        <p className="mx-auto mt-4 max-w-xl text-base sm:text-lg text-text-muted animate-fade-up [animation-delay:120ms]">
           Analyze repositories, languages, activity, and developer metrics from a single dashboard.
         </p>
 
@@ -61,10 +61,10 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => navigate('/dashboard/georgegyan')}
-            className="mt-3 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors"
+            className="mt-3 text-sm text-text-muted hover:text-text transition-colors"
           >
             Try:{' '}
-            <span className="font-mono text-[var(--color-accent)] underline decoration-dotted underline-offset-4">
+            <span className="font-mono text-accent underline decoration-dotted underline-offset-4">
               georgegyan
             </span>
           </button>

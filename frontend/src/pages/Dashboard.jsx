@@ -16,11 +16,11 @@ export default function Dashboard() {
 
   return (
     <div>
-      <div className="border-b border-[var(--color-border)] bg-[var(--color-surface)]/40">
+      <div className="border-b border-border bg-surface/40">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
           <div>
-            <p className="font-display text-sm font-semibold text-[var(--color-text)] whitespace-nowrap">
-              GitHub Profile Analyzer
+            <p className="font-display text-sm font-semibold text-text whitespace-nowrap">
+              Devlytic
             </p>
           </div>
           <div className="flex-1 sm:max-w-sm ml-auto">
@@ -54,7 +54,7 @@ export default function Dashboard() {
           <ActivitySummary activity={data.activity} />
 
           <div>
-            <h2 className="mb-4 font-display text-lg font-semibold text-[var(--color-text)]">
+            <h2 className="mb-4 font-display text-lg font-semibold text-text">
               Repositories
             </h2>
             <RepositoryList repositories={data.repositories?.repositories} />

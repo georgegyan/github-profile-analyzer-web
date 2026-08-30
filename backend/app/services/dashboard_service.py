@@ -17,7 +17,7 @@ def build_dashboard(username: str):
 
     events = get_user_events(username)
 
-    repository_data = analyze_repositories(username)
+    repository_data = analyze_repositories(username, repositories)
 
     language_data = analyze_languages(repositories)
 
@@ -44,7 +44,7 @@ def build_dashboard(username: str):
         "bio": user["bio"],
         "company": user["company"],
         "location": user["location"],
-        "blog": user["blog"],
+        "blog_url": user["blog"],
         "public_repos": user["public_repos"],
         "followers": user["followers"],
         "following": user["following"],

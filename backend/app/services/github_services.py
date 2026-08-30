@@ -1,6 +1,5 @@
 from app.services.github_client import github_get
 
-
 def get_user_profile(username: str):
     return github_get(f"/users/{username}")
 
@@ -13,7 +12,6 @@ def get_user_repositories(username: str):
             "sort": "updated"
         }
     )
-
 
 def get_user_events(username: str):
     return github_get(
