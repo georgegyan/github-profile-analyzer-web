@@ -2,9 +2,7 @@ import requests
 
 from app.config import GITHUB_TOKEN
 
-
 GITHUB_API_BASE_URL = "https://api.github.com"
-
 
 class GitHubAPIError(Exception):
     pass
