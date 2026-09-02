@@ -173,25 +173,6 @@ pnpm build    # Build the production bundle in dist/
 pnpm preview  # Preview the production build
 pnpm lint     # Run oxlint
 ```
-
-## CORS and Troubleshooting
-
-The backend allows the local frontend origins `http://localhost:5173` and
-`http://127.0.0.1:5173`.
-
-If the browser reports a CORS error, first make sure the backend is running on
-port 8000. A stopped backend or a backend exception can appear in the browser
-as a CORS failure because no response headers are returned.
-
-If port 8000 is already in use on Windows, find and stop the process:
-
-```powershell
-Get-NetTCPConnection -LocalPort 8000 -State Listen
-Stop-Process -Id <process-id> -Force
-```
-
-Then restart the backend using the command above.
-
 ## License
 
 This project is licensed under the terms in [LICENSE](LICENSE).
